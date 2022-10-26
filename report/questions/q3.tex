@@ -36,6 +36,12 @@
   \label{fig:scatter_matrix}
 \end{figure}
 
+%% analyze correlation
+As can be seen in the two previous figures, the 10 first variables are correlated all together and the next 2 variables are also correlated together. The absloute humidity is isolated from the rest. This is a first clue that we can use to reduce the dimension of the data. We will use the PCA to reduce the dimension of the data.
+The only variable collected by the sensors that is not correlated in the same with the others comes from the NOx sensor. Indeed, we can clearly dark red spot in the first figure and a linear relation in the other way on the second.
+
+The variables relative to the humidity and temperature are much less correlated with the sensors varibles but much more within themselves. We can thus clearly see two groups of variables in the correlation matrix.
+
 \subsection{Outlying observations using Mahalanobis distance}
 \begin{figure}[H]
   \centering
@@ -43,3 +49,5 @@
   \caption{Mahalanobis distance outlier detection}
   \label{fig:mahalanobis}
 \end{figure}
+
+Using the \verb|outlier| function from \verb|pscyh| package, we can clearly distinguish the outliers from the dataset, which are the points that are not close to eachother.

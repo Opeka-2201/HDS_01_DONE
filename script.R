@@ -83,15 +83,28 @@ df_clean <- df %>%
   filter(!is.na(`NOx(GT)`)) %>%
   filter(!is.na(`NO2(GT)`)) %>%
   filter(!is.na(`C6H6(GT)`)) %>%
+  filter(!is.na(`PT08.S1(CO)`)) %>%
+  filter(!is.na(`PT08.S2(NMHC)`)) %>%
+  filter(!is.na(`PT08.S3(NOx)`)) %>%
+  filter(!is.na(`PT08.S4(NO2)`)) %>%
+  filter(!is.na(`PT08.S5(O3)`)) %>%
   filter(!is.na(`T`)) %>%
   filter(!is.na(`RH`)) %>%
-  filter(!is.na(`AH`))
+  filter(!is.na(`AH`)) %>%
+  filter(!is.na(`HIGH_CO`)) %>%
+  filter(!is.na(`HIGH_NOx`)) %>%
+  filter(!is.na(`HIGH_NMHC`)) %>%
+  filter(!is.na(`HIGH_NO2`)) %>%
+  filter(!is.na(`HIGH_C6H6`)) %>%
+  filter(!is.na(`HIGH_T`)) %>%
+  filter(!is.na(`HIGH_RH`)) %>%
+  filter(!is.na(`HIGH_AH`))
 
 print(paste0("# of remaining rows : ", nrow(df_clean)))
 
 # outlier mahalanobis distance
 png("report/figs/outliers.png")
-outlier(df_clean[, 1:13] , plot = TRUE)
+outlier(df_clean[, 1:13], plot = TRUE, bad = 25)
 dev.off()
 
 # CORRELATION
@@ -112,6 +125,5 @@ dev.off()
 
 #biplot
 png("report/figs/biplot.png")
-print(names(princomp(df_clean[1:13])))
-biplot(princomp(df_clean[1:13]), scale = 0)
+biplot(princomp(df_clean[1:12]), scale = 0)
 dev.off()
