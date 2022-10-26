@@ -8,6 +8,7 @@ library(packHV)
 library(corrplot)
 library(dplyr)
 library(kableExtra)
+library(Rtsne)
 
 # change working directory
 setwd("~/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/") # nolint
@@ -30,8 +31,25 @@ report_missing <- function(df) {
   print(paste0("Percentage missing: ", pct_missing, "%"))
 }
 
+# df_mahalanobis <- df_clean %>%
+#   select(`CO(GT)`, `NMHC(GT)`, `NOx(GT)`, `NO2(GT)`, `C6H6(GT)`, `T`, `RH`, `AH`) %>%
+#   as.matrix()
+
+# mahalanobis <- function(x, y) {
+#   # compute the Mahalanobis distance between two vectors
+#   # x and y are vectors of the same length
+#   # S is the covariance matrix
+#   S <- cov(x, y)
+#   # compute the inverse of the covariance matrix
+#   S_inv <- solve(S)
+#   # compute the Mahalanobis distance
+#   d <- sqrt(t(x - y) %*% S_inv %*% (x - y))
+#   return(d)
+# }
+
 # read in data
 df <- read_excel("AirQualityUCI/data_set.xlsx")
+write.csv(df, "data_set.txt")
 
 # MISSING VALUES
 report_missing(df)
@@ -44,8 +62,8 @@ png("report/figs/missing_values_heatmap.png")
 print(gg_miss_upset(df[1:13]))
 dev.off()
 
-sink("report/questions/table2.tex")
-print(describe(df[, 19:21]) %>% kable(format = "latex", ))
+sink("report/questions/temp_table.tex")
+print(describe(df) %>% kable(format = "latex", ))
 sink()
 
 # graphical summary
@@ -84,7 +102,14 @@ df_clean <- df %>%
   filter(!is.na(`RH`)) %>%
   filter(!is.na(`AH`))
 
-print(nrow(df_clean))
+# print(paste0("# of remaining rows : ", nrow(df_clean)))
+
+# # compute the Mahalanobis distance between each pair of observations
+# d <- dist(df_mahalanobis, method = mahalanobis)
+
+# # detect outliers
+# print(outliers <- which(d > 3))
+
 
 # CORRELATION
 # corr plot
@@ -97,15 +122,21 @@ png("report/figs/scatter_matrix.png")
 plot(df_clean[, 1:13])
 dev.off()
 
-write.csv(df, "data_set.txt")
-
-#Principal Component Analysis of dt_clean
-pca <- prcomp(df_clean[, 1:13], scale = TRUE)
-summary(pca)
-
-# scree plot
-png("report/figs/scree_plot.png")
-
-plot(pca, type = "l")
+#Principal Component Analysis of df_clean and plot
+pca <- prcomp(df_clean[, 1:10], scale = TRUE)
+png("report/figs/pca.png")
+plot(pca, type = "lines")
 dev.off()
 
+# t-sne analysis with different perplexities
+png("report/figs/tsne.png")
+par(mfrow = c(2, 2))
+tsne_5 <- Rtsne(df_clean[, 1:10], perplexity = 5)
+plot(tsne_5$Y, col = df_clean$"T", pch = 20, cex = 0.5, main = "Perplexity = 5")
+tsne_10 <- Rtsne(df_clean[, 1:10], perplexity = 10)
+plot(tsne_10$Y, col = df_clean$"T", pch = 20, cex = 0.5, main ="Perplexity = 10")
+tsne_20 <- Rtsne(df_clean[, 1:10], perplexity = 20)
+plot(tsne_20$Y, col = df_clean$"T", pch = 20, cex = 0.5, main = "Perplexity = 20")
+tsne_30 <- Rtsne(df_clean[, 1:10], perplexity = 30)
+plot(tsne_30$Y, col = df_clean$"T", pch = 20, cex = 0.5, main = "Perplexity = 30")
+dev.off()

@@ -20,6 +20,12 @@ and to the fact that the data was collected in a real environment.
 
 To handle the missing values we will use for the rest of the project the complete case strategy.
 Indeed, replacing missing data by the mean would not be a good idea because it would change the correlation structure of the data which is important for the next steps.
-We only have 33 lines with missing values so we can afford to remove them keeping the ratio $\frac{n}{p} > 5$ as we have a total of 
+We only have 33 lines with missing values so we can afford to remove them keeping the ratio $\frac{n}{p} > 5$ as we have a total of 163 lines and 21 variables, we keep $7.8 > 5$.
+
+Using the two figures here above we can see that the missing values are not randomly distributed.
+Indeed, when there's a failure on the CO sensor, the NOx and NO$_2$ sensors are also failing a little bit after.
+We can also see that when the NOx sensor is failing, the NO$_2$ sensor is also failing, this is quite logical because NO$_2$ is a kind of NOx.
+Around the 175th observation, we can see the non methane hydrocarbons sensor failing and never quite coming to its original state. 
+All these observations are confirmed by the second figure as the NMHC measure is the most missing well over the CO sensor or the couple NOx/NO$_2$ which is failling the same number of times.
 
 
