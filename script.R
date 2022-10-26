@@ -44,11 +44,9 @@ png("report/figs/missing_values_heatmap.png")
 print(gg_miss_upset(df[1:13]))
 dev.off()
 
-# sink("report/questions/table1.tex")
-# print(describe(df[, 1:9]) %>% kable(format = "latex",))
-# sink("report/questions/table2.tex")
-# print(describe(df[, 10:18]) %>% kable(format = "latex", ))
-# sink()
+sink("report/questions/table2.tex")
+print(describe(df[, 19:21]) %>% kable(format = "latex", ))
+sink()
 
 # graphical summary
 png("report/figs/summary_1.png")
@@ -86,6 +84,8 @@ df_clean <- df %>%
   filter(!is.na(`RH`)) %>%
   filter(!is.na(`AH`))
 
+print(nrow(df_clean))
+
 # CORRELATION
 # corr plot
 png("report/figs/corr.png")
@@ -97,4 +97,15 @@ png("report/figs/scatter_matrix.png")
 plot(df_clean[, 1:13])
 dev.off()
 
-write.csv(df,"data_set.txt")
+write.csv(df, "data_set.txt")
+
+#Principal Component Analysis of dt_clean
+pca <- prcomp(df_clean[, 1:13], scale = TRUE)
+summary(pca)
+
+# scree plot
+png("report/figs/scree_plot.png")
+
+plot(pca, type = "l")
+dev.off()
+
