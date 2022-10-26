@@ -36,22 +36,22 @@ df <- read_excel("AirQualityUCI/data_set.xlsx")
 # MISSING VALUES
 report_missing(df)
 
-svg("report/figs/missing_values.svg")
+png("report/figs/missing_values.png")
 print(vis_miss(df[1:13], sort_miss = TRUE))
 dev.off()
 
-svg("report/figs/missing_values_heatmap.svg")
+png("report/figs/missing_values_heatmap.png")
 print(gg_miss_upset(df[1:13]))
 dev.off()
 
-sink("report/questions/table1.tex")
-print(describe(df[, 1:9]) %>% kable(format = "latex",))
-sink("report/questions/table2.tex")
-print(describe(df[, 10:18]) %>% kable(format = "latex", ))
-sink()
+# sink("report/questions/table1.tex")
+# print(describe(df[, 1:9]) %>% kable(format = "latex",))
+# sink("report/questions/table2.tex")
+# print(describe(df[, 10:18]) %>% kable(format = "latex", ))
+# sink()
 
 # graphical summary
-svg("report/figs/summary_1.svg")
+png("report/figs/summary_1.png")
 par(mfrow = c(2, 3))
 hist_boxplot(df$"CO(GT)", main = "CO(GT)")
 hist_boxplot(df$"NMHC(GT)", main = "NMHC(GT)")
@@ -61,7 +61,7 @@ hist_boxplot(df$"PT08.S2(NMHC)", main = "NMHC Sensor")
 hist_boxplot(df$"PT08.S3(NOx)", main = "NOx Sensor")
 dev.off()
 
-svg("report/figs/summary_2.svg")
+png("report/figs/summary_2.png")
 par(mfrow = c(2, 3))
 hist_boxplot(df$"NO2(GT)", main = "NO2(GT)")
 hist_boxplot(df$"C6H6(GT)", main = "C6H6(GT)")
@@ -71,7 +71,7 @@ hist_boxplot(df$"PT08.S5(O3)", main = "O3 Sensor")
 hist_boxplot(df$"RH", main = "Relative Humidity")
 dev.off()
 
-svg("report/figs/summary_3.svg")
+png("report/figs/summary_3.png")
 hist_boxplot(df$"T", main = "Temperature")
 dev.off()
 
@@ -88,11 +88,13 @@ df_clean <- df %>%
 
 # CORRELATION
 # corr plot
-svg("report/figs/corr.svg")
+png("report/figs/corr.png")
 corrplot(cor(df_clean[, 1:13]), method = "circle")
 dev.off()
 
 # scatter matrix plot
-svg("report/figs/scatter_matrix.svg")
+png("report/figs/scatter_matrix.png")
 plot(df_clean[, 1:13])
 dev.off()
+
+write.csv(df,"data_set.txt")
