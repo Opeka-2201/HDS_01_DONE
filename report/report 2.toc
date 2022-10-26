@@ -6,8 +6,8 @@
 \contentsline {section}{\numberline {3}Exploratory data analysis}{3}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Univariate statistical analysis}{3}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Multivariate graphical analysis}{3}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}Correlation structure of the data}{5}{subsection.3.3}% 
-\contentsline {subsection}{\numberline {3.4}Outlying observations using Mahalanobis distance}{5}{subsection.3.4}% 
-\contentsline {section}{\numberline {4}Correlation analysis with data reduction}{5}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}Choice between PCA and t-SNE}{5}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}2D plot of the data}{5}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {3.3}Correlation structure of the data}{3}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Outlying observations using Mahalanobis distance}{3}{subsection.3.4}% 
+\contentsline {section}{\numberline {4}Correlation analysis with data reduction}{3}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Choice between PCA and t-SNE}{3}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}2D plot of the data}{3}{subsection.4.2}% 

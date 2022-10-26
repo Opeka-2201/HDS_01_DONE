@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.3)  26 OCT 2022 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.1.3)  26 OCT 2022 19:19
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -551,6 +551,7 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 32.
 LaTeX Info: Redefining \pageref on input line 32.
 LaTeX Info: Redefining \nameref on input line 32.
+ (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.out) (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.out)
 \@outlinefile=\write7
 \openout7 = `report.out'.
 
@@ -590,7 +591,7 @@ LaTeX Info: Redefining \nameref on input line 32.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-<figs/facsa.png, id=7, 438.63875pt x 115.43124pt>
+<figs/facsa.png, id=55, 438.63875pt x 115.43124pt>
 File: figs/facsa.png Graphic file (type png)
 <use figs/facsa.png>
 Package pdftex.def Info: figs/facsa.png  used on input line 55.
@@ -604,13 +605,15 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 68.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/figs/facsa.png>]
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/figs/facsa.png>] (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.toc)
 \tf@toc=\write8
 \openout8 = `report.toc'.
 
+ (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.lof)
 \tf@lof=\write9
 \openout9 = `report.lof'.
 
+ (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.lot)
 \tf@lot=\write10
 \openout10 = `report.lot'.
 
@@ -633,12 +636,12 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
                    \relax 
 l.6 
      [1]
-<figs/missing_values.png, id=46, 481.8pt x 481.8pt>
+<figs/missing_values.png, id=114, 481.8pt x 481.8pt>
 File: figs/missing_values.png Graphic file (type png)
 <use figs/missing_values.png>
 Package pdftex.def Info: figs/missing_values.png  used on input line 9.
 (pdftex.def)             Requested size: 236.01561pt x 236.01054pt.
-<figs/missing_values_heatmap.png, id=48, 481.8pt x 481.8pt>
+<figs/missing_values_heatmap.png, id=116, 481.8pt x 481.8pt>
 File: figs/missing_values_heatmap.png Graphic file (type png)
 <use figs/missing_values_heatmap.png>
 Package pdftex.def Info: figs/missing_values_heatmap.png  used on input line 16.
@@ -648,50 +651,39 @@ Package pdftex.def Info: figs/missing_values_heatmap.png  used on input line 16.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 )
-Runaway argument?
-{figur 
-/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/questions/q3.tex:7: Paragraph ended before \begin was complete.
-<to be read again> 
-                   \par 
-l.7 
-    
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-) (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/questions/q4.tex) [3] [4]
+<figs/corr.png, id=123, 481.8pt x 481.8pt>
+File: figs/corr.png Graphic file (type png)
+<use figs/corr.png>
+Package pdftex.def Info: figs/corr.png  used on input line 8.
+(pdftex.def)             Requested size: 236.01561pt x 236.01054pt.
+<figs/scatter_matrix.png, id=124, 481.8pt x 481.8pt>
+File: figs/scatter_matrix.png Graphic file (type png)
+<use figs/scatter_matrix.png>
+Package pdftex.def Info: figs/scatter_matrix.png  used on input line 15.
+(pdftex.def)             Requested size: 236.01561pt x 236.01054pt.
+ [3 </Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/figs/corr.png>]) (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/questions/q4.tex) [4 </Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/figs/scatter_matrix.png>] [5]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
  (/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
-
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  B5A1AB501E962F1E65C81F405B3FFCDB;892.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: B5A1AB501E962F1E65C81F405B3FFCDB;892.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 98.
  ) 
 Here is how much of TeX's memory you used:
- 18505 strings out of 492616
- 337092 string characters out of 6129482
- 466431 words of memory out of 5000000
- 22034 multiletter control sequences out of 15000+600000
- 23759 words of font info for 64 fonts, out of 8000000 for 9000
+ 18545 strings out of 492616
+ 338658 string characters out of 6129482
+ 466736 words of memory out of 5000000
+ 22058 multiletter control sequences out of 15000+600000
+ 24535 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,11n,73p,1049b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on "/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.pdf" (6 pages, 272200 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc1728.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on "/Users/arthurlouis/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/report/report.pdf" (7 pages, 469272 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
- 24 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
