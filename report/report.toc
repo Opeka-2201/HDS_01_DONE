@@ -9,4 +9,4 @@
 \contentsline {subsection}{\numberline {3.3}Outlying observations using Mahalanobis distance}{7}{subsection.3.3}% 
 \contentsline {section}{\numberline {4}Correlation analysis with data reduction}{7}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}Choice between PCA and t-SNE}{7}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}2D plot of the data}{8}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.2}2D plot of the data}{7}{subsection.4.2}% 

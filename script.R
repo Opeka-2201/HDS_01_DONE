@@ -9,6 +9,7 @@ library(corrplot)
 library(dplyr)
 library(kableExtra)
 library(Rtsne)
+library(stats)
 
 # change working directory
 setwd("~/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/") # nolint
@@ -29,18 +30,6 @@ report_missing <- function(df) {
   print(paste0("Missing values: ", n_missing))
   print(paste0("Total rows: ", n_rows))
   print(paste0("Percentage missing: ", pct_missing, "%"))
-}
-
-mahalanobis <- function(x, y) {
-  # compute the Mahalanobis distance between two vectors
-  # x and y are vectors of the same length
-  # S is the covariance matrix
-  S <- cov(x, y)
-  # compute the inverse of the covariance matrix
-  S_inv <- solve(S)
-  # compute the Mahalanobis distance
-  d <- sqrt(t(x - y) %*% S_inv %*% (x - y))
-  return(d)
 }
 
 # read in data
@@ -100,16 +89,10 @@ df_clean <- df %>%
 
 print(paste0("# of remaining rows : ", nrow(df_clean)))
 
-df_mahalanobis <- df_clean %>%
-  select(`CO(GT)`, `NMHC(GT)`, `NOx(GT)`, `NO2(GT)`, `C6H6(GT)`, `T`, `RH`, `AH`) %>%
-  as.matrix()
-
-# compute the Mahalanobis distance between each pair of observations
-d <- dist(df_mahalanobis, method = mahalanobis)
-
-# detect outliers
-print(outliers <- which(d > 3))
-
+# outlier mahalanobis distance
+png("report/figs/outliers.png")
+outlier(df_clean[, 1:13] , plot = TRUE)
+dev.off()
 
 # CORRELATION
 # corr plot
@@ -122,21 +105,13 @@ png("report/figs/scatter_matrix.png")
 plot(df_clean[, 1:13])
 dev.off()
 
-#Principal Component Analysis of df_clean and plot
-pca <- prcomp(df_clean[, 1:10], scale = TRUE)
-png("report/figs/pca.png")
-plot(pca, type = "lines")
+# scree plot of df_clean
+png("report/figs/scree_plot.png")
+screeplot(princomp(df_clean[1:13]), type = "lines")
 dev.off()
 
-# t-sne analysis with different perplexities
-png("report/figs/tsne.png")
-par(mfrow = c(2, 2))
-tsne_5 <- Rtsne(df_clean[, 1:10], perplexity = 5)
-plot(tsne_5$Y, col = df_clean$"T", pch = 20, cex = 0.5, main = "Perplexity = 5")
-tsne_10 <- Rtsne(df_clean[, 1:10], perplexity = 10)
-plot(tsne_10$Y, col = df_clean$"T", pch = 20, cex = 0.5, main ="Perplexity = 10")
-tsne_20 <- Rtsne(df_clean[, 1:10], perplexity = 20)
-plot(tsne_20$Y, col = df_clean$"T", pch = 20, cex = 0.5, main = "Perplexity = 20")
-tsne_30 <- Rtsne(df_clean[, 1:10], perplexity = 30)
-plot(tsne_30$Y, col = df_clean$"T", pch = 20, cex = 0.5, main = "Perplexity = 30")
+#biplot
+png("report/figs/biplot.png")
+print(names(princomp(df_clean[1:13])))
+biplot(princomp(df_clean[1:13]), scale = 0)
 dev.off()
