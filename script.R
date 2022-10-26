@@ -31,21 +31,17 @@ report_missing <- function(df) {
   print(paste0("Percentage missing: ", pct_missing, "%"))
 }
 
-# df_mahalanobis <- df_clean %>%
-#   select(`CO(GT)`, `NMHC(GT)`, `NOx(GT)`, `NO2(GT)`, `C6H6(GT)`, `T`, `RH`, `AH`) %>%
-#   as.matrix()
-
-# mahalanobis <- function(x, y) {
-#   # compute the Mahalanobis distance between two vectors
-#   # x and y are vectors of the same length
-#   # S is the covariance matrix
-#   S <- cov(x, y)
-#   # compute the inverse of the covariance matrix
-#   S_inv <- solve(S)
-#   # compute the Mahalanobis distance
-#   d <- sqrt(t(x - y) %*% S_inv %*% (x - y))
-#   return(d)
-# }
+mahalanobis <- function(x, y) {
+  # compute the Mahalanobis distance between two vectors
+  # x and y are vectors of the same length
+  # S is the covariance matrix
+  S <- cov(x, y)
+  # compute the inverse of the covariance matrix
+  S_inv <- solve(S)
+  # compute the Mahalanobis distance
+  d <- sqrt(t(x - y) %*% S_inv %*% (x - y))
+  return(d)
+}
 
 # read in data
 df <- read_excel("AirQualityUCI/data_set.xlsx")
@@ -102,13 +98,17 @@ df_clean <- df %>%
   filter(!is.na(`RH`)) %>%
   filter(!is.na(`AH`))
 
-# print(paste0("# of remaining rows : ", nrow(df_clean)))
+print(paste0("# of remaining rows : ", nrow(df_clean)))
 
-# # compute the Mahalanobis distance between each pair of observations
-# d <- dist(df_mahalanobis, method = mahalanobis)
+df_mahalanobis <- df_clean %>%
+  select(`CO(GT)`, `NMHC(GT)`, `NOx(GT)`, `NO2(GT)`, `C6H6(GT)`, `T`, `RH`, `AH`) %>%
+  as.matrix()
 
-# # detect outliers
-# print(outliers <- which(d > 3))
+# compute the Mahalanobis distance between each pair of observations
+d <- dist(df_mahalanobis, method = mahalanobis)
+
+# detect outliers
+print(outliers <- which(d > 3))
 
 
 # CORRELATION

@@ -5,3 +5,7 @@
 \BOOKMARK [1][-]{section.3}{Exploratory data analysis}{}% 5
 \BOOKMARK [2][-]{subsection.3.1}{Statistical analysis}{section.3}% 6
 \BOOKMARK [2][-]{subsection.3.2}{Correlation structure of the data}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.3}{Outlying observations using Mahalanobis distance}{section.3}% 8
+\BOOKMARK [1][-]{section.4}{Correlation analysis with data reduction}{}% 9
+\BOOKMARK [2][-]{subsection.4.1}{Choice between PCA and t-SNE}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{2D plot of the data}{section.4}% 11
