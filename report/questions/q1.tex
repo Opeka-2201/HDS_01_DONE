@@ -1,5 +1,37 @@
 \subsection{Discussion on the data}
-%% TODO
+The data we used in this project is a subset of the data collected by the ENEA (National Agency for New Technologies, Energy and Sustainable Economic Development)
+alonside a road in a polluted area of Italy. This dataset is available on the UCI repository\footnote{\href{https://archive.ics.uci.edu/ml/datasets/air+quality}{https://archive.ics.uci.edu/ml/datasets/air+quality}}. The data was harvested using a multicensor device and reference analyzers. The data was collected between March 2004 and February 2005.
+
+There are 5 couples of variables in the dataset, each couple is composed of a variable measured by the reference analyzer and the corresponding variable measured by the multicensor device.
+The values represent the hourly average concentration of each variable. In addition to the variables couples, we have 3 other variables representing the temperature and the humidity (both relative and absolute).
+The different values are stored in the following columns of our dataset :
+\begin{itemize}
+\item \texttt{CO(GT)} : concentration of CO in the air (in mg/m$^3$)
+\item \texttt{PT08.S1(C0)} : average sensor response (nominally CO targeted)
+\item \texttt{NMHC(GT)} : concentration of non-methane hydrocarbons in the air (in $\mu$g/m$^3$)
+\item \texttt{C6H6(GT)} : concentration of benzene in the air (in $\mu$g/m$^3$)
+\item \texttt{PT08.S2(NMHC)} : average sensor response (nominally NMHC targeted)
+\item \texttt{NOx(GT)} : concentration of NOx in the air (in parts per billion)
+\item \texttt{PT08.S3(NOx)} : average sensor response (nominally NOx targeted)
+\item \texttt{NO2(GT)} : concentration of NO$_2$ in the air (in $\mu$g/m$^3$)
+\item \texttt{PT08.S4(NO2)} : average sensor response (nominally NO$_2$ targeted)
+\item \texttt{PT08.S5(O3)} : average sensor response (nominally O$_3$ targeted)
+\item \texttt{T} : temperature (in $^{\circ}$C)
+\item \texttt{RH} : relative humidity (in $\%$)
+\item \texttt{AH} : absolute humidity
+\end{itemize}
+
+On top of that, we created a binary indicator per variable measured by the reference analyzers which is equal to 1 when the measured value is above the median of the variable and 0 otherwise.
+The binary values are stored in the following columns :
+
+\begin{itemize}
+  \item \texttt{HIGH\_CO} : binary indicator for CO (above/under median)
+  \item \texttt{HIGH\_NMHC} : binary indicator for NMHC (above/under median)
+  \item \texttt{HIGH\_C6H6} : binary indicator for benzene (above/under median)
+  \item \texttt{HIGH\_NOx} : binary indicator for NOx (above/under median)
+  \item \texttt{HIGH\_NO2} : binary indicator for NO2 (above/under median)
+\end{itemize}
 
 \subsection{Link between the variables}
-%% TODO
+The values for each couple are obviously going to be quite correlated, as they are measuring the same thing.
+Furthermore, the values for the binary indicators are going to be highly correlated with the values of the corresponding measurements from the reference analyzers (as the binary indicator is equal to 1 when the value is above the median and 0 otherwise).
