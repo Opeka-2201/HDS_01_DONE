@@ -5,6 +5,9 @@ library(psych)
 library(naniar)
 library(survival)
 library(packHV)
+library(corrplot)
+library(dplyr)
+library(kableExtra)
 
 # change working directory
 setwd("~/Documents/ULiège/Master/Bloc 1/Q1/High Dimensional Statistics/Projects/P1/") # nolint
@@ -34,16 +37,18 @@ df <- read_excel("AirQualityUCI/data_set.xlsx")
 report_missing(df)
 
 svg("report/figs/missing_values.svg")
-print(vis_miss(df))
+print(vis_miss(df[1:13], sort_miss = TRUE))
 dev.off()
 
 svg("report/figs/missing_values_heatmap.svg")
-print(gg_miss_upset(df))
+print(gg_miss_upset(df[1:13]))
 dev.off()
 
-# EXPLORATORY DATA ANALYSIS
-# statistical summary
-print(describe(df))
+sink("report/questions/table1.tex")
+print(describe(df[, 1:9]) %>% kable(format = "latex",))
+sink("report/questions/table2.tex")
+print(describe(df[, 10:18]) %>% kable(format = "latex", ))
+sink()
 
 # graphical summary
 svg("report/figs/summary_1.svg")
@@ -68,4 +73,26 @@ dev.off()
 
 svg("report/figs/summary_3.svg")
 hist_boxplot(df$"T", main = "Temperature")
+dev.off()
+
+# complete case strategy
+df_clean <- df %>%
+  filter(!is.na(`CO(GT)`)) %>%
+  filter(!is.na(`NMHC(GT)`)) %>%
+  filter(!is.na(`NOx(GT)`)) %>%
+  filter(!is.na(`NO2(GT)`)) %>%
+  filter(!is.na(`C6H6(GT)`)) %>%
+  filter(!is.na(`T`)) %>%
+  filter(!is.na(`RH`)) %>%
+  filter(!is.na(`AH`))
+
+# CORRELATION
+# corr plot
+svg("report/figs/corr.svg")
+corrplot(cor(df_clean[, 1:13]), method = "circle")
+dev.off()
+
+# scatter matrix plot
+svg("report/figs/scatter_matrix.svg")
+plot(df_clean[, 1:13])
 dev.off()
