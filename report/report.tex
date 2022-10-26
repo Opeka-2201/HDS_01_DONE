@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{enumitem}
+
+\usepackage{graphicx}
+
+\usepackage{bbold}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage[margin=2.5cm]{geometry}
+
+\usepackage{fancyhdr}
+
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\usepackage{scrextend}
+
+\makeatletter
+
+\makeatother
+
+\begin{document}
+
+% ==============================================================================
+
+\title{High-Dimensional Statistics}								% Title
+\author{Romain LAMBERMONT, Arthur LOUIS}								% Author
+\date{\today}						% Date
+
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+
+\begin{titlepage}
+ \centering
+ \vspace*{0.5 cm}
+ \includegraphics[scale = 0.7]{figs/facsa.png}\\[1.0 cm]	% University Logo
+ \textsc{\LARGE \newline\newline Faculté des Sciences appliquées}\\[2.0 cm]	% University Name
+ \textsc{\Large MATH2021-1 High-dimensional statistics}\\[0.5 cm]				% Course Code
+ \rule{\linewidth}{0.2 mm} \\[0.4 cm]
+ {\huge \bfseries Project 1 : Exploratory Data Analysis}\\
+ \rule{\linewidth}{0.2 mm} \\[1.5 cm]
+
+ \begin{minipage}{0.5\textwidth}
+ 	\begin{flushleft} \large
+ 		\emph{Teacher :}\\
+ 		Gentiane HAESBROECK\\
+    \vspace{0.5cm}
+ 		\end{flushleft}
+ 		\end{minipage}~
+ 		\begin{minipage}{0.4\textwidth}
+
+ 		\begin{flushright} \large
+ 		\emph{Group :} \\
+    Romain LAMBERMONT\\
+    Arthur LOUIS\\
+      
+ 	\end{flushright}
+
+ \end{minipage}\\[2 cm]
+ \thedate
+\end{titlepage}
+
+% ==============================================================================
+\thispagestyle{empty}
+\tableofcontents
+\listoffigures
+\listoftables
+\pagebreak
+\setcounter{page}{1}
+
+\section{Presentation of the data}
+\input{questions/q1.tex}
+
+\section{Information about missing data}
+\input{questions/q2.tex}
+
+\section{Exploratory data analysis}
+\input{questions/q3.tex}
+
+\section{Correlation analysis with data reduction}
+\input{questions/q4.tex}
+
+\end{document}
